@@ -1,6 +1,10 @@
-# loisir-web [![GitHub issues](https://img.shields.io/github/issues/Loisir/loisir-web?style=for-the-badge)](https://github.com/Loisir/loisir-web/issues)
+# loisir-web
 
 Welcome to the official repository of Loisir.
+
+[![GitHub issues](https://img.shields.io/github/issues/Loisir/loisir-web?style=for-the-badge)](https://github.com/Loisir/loisir-web/issues)
+[![GitHub license](https://img.shields.io/github/license/Loisir/loisir-web?style=for-the-badge)](https://github.com/Loisir/loisir-web)
+
 
 ## What is it?
 
