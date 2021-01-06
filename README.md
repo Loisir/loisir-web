@@ -22,3 +22,7 @@ Most of the Client is left to be designed. The following things need to be imple
 • Main UX<br>
 • Photo Editor (or Meme Editor)<br>
 • and some Backend code.<br>
+
+## License
+
+• Licensed under the BSD 3-Clause license, see LICENSE for details.
