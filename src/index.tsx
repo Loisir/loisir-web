@@ -1,23 +1,27 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './index.scss';
-import App from './App';
-import { BrowserRouter as Router } from 'react-router-dom';
-import * as serviceWorkerRegistration from './registerServiceWorker';
-import reportWebVitals from './reportWebVitals';
 
-ReactDOM.render(
+/**
+ * Add your components here.
+ */
+import Home from './components/pages/Home';
+import About from './components/pages/About';
+import NotFound from './components/pages/404';
+import Post from './components/pages/Post';
+
+const App = () => (
   <React.StrictMode>
     <Router>
-      <App />
+      <Switch>
+        <Route path="/" exact component={Home} />
+        <Route path="/about" component={About} />
+        <Route path="/post" component={Post} />
+        <Route component={NotFound}/>
+      </Switch>
     </Router>
-  </React.StrictMode>,
-  document.getElementById('react-root')
+  </React.StrictMode>
 );
 
-serviceWorkerRegistration.register();
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+ReactDOM.render(<App />, document.getElementById('react-root'));
