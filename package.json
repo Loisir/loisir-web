@@ -1,6 +1,8 @@
 {
-  "name": "test-app",
+  "name": "loisir-web",
   "version": "0.1.0",
+  "author": "Loisir",
+  "license": "BSD-3-Clause",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
