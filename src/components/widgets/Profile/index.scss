@@ -1,0 +1,126 @@
+@import '../../../styles/vars';
+@import '../../../styles/extendables';
+
+.profile-container {
+  text-align: left;
+  font-size: 13px;
+
+  padding: 12px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  max-width: 600px;
+  
+  margin: 12px;
+  @media (min-width: 640px) {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  background-color: $primary-foreground;
+  border: $primary-border-color 1px solid;
+
+  .profile-avatar-follow {
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+
+    margin-left: 12px;
+    margin-right: 12px;
+
+    .follow-btn {
+      flex: 1;
+  
+      margin: auto;
+      width: 50%;
+  
+      button {
+        @extend %blue-button;
+  
+        float: right;
+  
+        width: 80px;
+        height: 34px;
+  
+        border: 0;
+        border-radius: 18px;
+      }
+
+      button:hover {
+        cursor: pointer;
+      }
+  
+      button:focus {
+        outline: none;
+        box-shadow: none;
+      }
+    }
+  }
+
+  .profile-details {
+    padding-left: 8px;
+    padding-right: 8px;
+
+    display: flex;
+    flex-direction: row;
+
+    @media (max-width: 600px) {
+      flex-direction: column;
+    }
+
+    .profile-primary {
+      flex: 1;
+
+      /* username */
+      div:nth-child(1) {
+        margin-top: 20px;
+        font-size: 14px;
+      }
+    
+      /* about me */ 
+      div:nth-child(2) {
+        @extend %muted-text;
+        
+        margin-top: 26px;
+        margin-bottom: 26px;
+      }
+    
+      /* location */
+      div:nth-child(3) {
+        color: $muted-text-color;
+        margin-bottom: 16px;
+        display: flex;
+    
+        /* location icon */
+        img {
+          width: 16px;
+          height: 16px;
+    
+          padding-right: 10px;
+        }
+      }
+    }
+
+    .profile-stats {
+      flex: 1;
+      float: right;
+
+      display: flex;
+      flex-direction: row;
+      text-align: center;
+
+      @media (min-width: 600px) {
+        margin: auto;
+      }
+  
+      .stat {
+        width: 100%;
+        flex: 1;
+      }
+  
+      /* stat values */
+      p:nth-child(2) {
+        color:$primary-blue;
+      }
+    }
+  }
+}

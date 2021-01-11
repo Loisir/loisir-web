@@ -1,0 +1,42 @@
+@import '../../../styles/vars';
+
+.current-tab {
+  border-bottom: $primary-blue solid 2px;
+}
+
+.navbar-container {
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  
+  text-align: center;
+  font-size: 14px;
+
+  background-color: $primary-background;
+  border-bottom: $primary-border-color solid 1px;
+
+  div {
+    display: flex;
+    flex-direction: row;
+
+    text-align: center;
+    max-width: 600px;
+
+    margin: auto;
+
+    span {
+      flex: 1;
+      padding: 8px;
+      display: block;
+
+      img {
+        width: 26px;
+        height: 26px;
+      }
+    }
+
+    span:hover {
+      background-color: $primary-foreground;
+    }
+  }
+}

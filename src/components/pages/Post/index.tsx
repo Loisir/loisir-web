@@ -2,26 +2,19 @@ import React from 'react';
 import moment from 'moment';
 
 import ProfileAvatar from '../../widgets/ProfileAvatar';
+import { labelNumber } from '../../../utils';
 
 interface PostProps {
   url: string,
-  authorPicUrl: string,
+  avatarUrl?: string,
   username: string,
   createdTime: moment.Moment
   caption?: string,
   likes?: number,
+  comments?: number 
 }
 
-export default class Post extends React.Component<PostProps> {  
-  constructor(props: PostProps) {
-    super(props);
-
-    this.state = {
-      caption: '',
-      likes: 0,
-    };
-  };
-  
+export default class Post extends React.Component<PostProps> {
   render() {
     return (
       <main>
@@ -31,11 +24,17 @@ export default class Post extends React.Component<PostProps> {
           </div>
           <div className="post-info">
             <div className="profile-pic-container">
-              <ProfileAvatar src={this.props.authorPicUrl} />
+              <ProfileAvatar src={this.props.avatarUrl} />
             </div>
-            <div>
-              <p>{this.props.username}</p>
-              <p>Posted {this.props.createdTime.fromNow()}</p>
+            <div className="post-details-container">
+              <div className="post-username-age">
+                <p>{this.props.username}</p>
+                <p>Posted {this.props.createdTime.fromNow()}</p>
+              </div>
+              <div className="post-actions">
+                <p>{labelNumber(this.props.likes || 0)}</p>
+                <p>{labelNumber(this.props.comments || 0)}</p>
+              </div>
             </div>
           </div>
         </div>
