@@ -4,6 +4,6 @@ export const isInViewport = (elem : Element, fullyVisible : boolean) : boolean =
   const elemBottom = position.bottom;
 
   return fullyVisible
-        ? elemTop >= 0 && elemBottom <= window.innerHeight
-        : elemTop < window.innerHeight && elemBottom >= 0;
+    ? elemTop >= 0 && elemBottom <= window.innerHeight
+    : elemTop < window.innerHeight && elemBottom >= 0;
 };

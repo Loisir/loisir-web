@@ -1,42 +1,39 @@
-@import '../../../styles/vars';
+@import '../../../styles/colors';
 
 .current-tab {
-  border-bottom: $primary-blue solid 2px;
+  border-bottom: $default-blue solid 2px;
 }
 
 .navbar-container {
   position: fixed;
   top: 0px;
-  width: 100%;
-  
+  width: 100%;  
   text-align: center;
   font-size: 14px;
-
-  background-color: $primary-background;
-  border-bottom: $primary-border-color solid 1px;
+  background-color: $default-background;
 
   div {
     display: flex;
     flex-direction: row;
-
     text-align: center;
-    max-width: 600px;
-
+    max-width: 626px;
     margin: auto;
+    max-width: 260px;
 
     span {
       flex: 1;
-      padding: 8px;
+      padding: 6px;
       display: block;
-
-      img {
-        width: 26px;
-        height: 26px;
+      font-size: 13px;
+      
+      a {
+        color: $default-text-color;
+        text-decoration: none;
       }
     }
 
     span:hover {
-      background-color: $primary-foreground;
+      background-color: $default-foreground;
     }
   }
 }

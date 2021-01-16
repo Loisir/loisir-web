@@ -9,7 +9,7 @@ import './index.scss';
 import Home from './components/pages/Home';
 import About from './components/pages/About';
 import NotFound from './components/pages/404';
-import Post from './components/pages/Post';
+import Post from './components/widgets/Post';
 import NavBar from './components/widgets/NavBar';
 
 const App = () => (

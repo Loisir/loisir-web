@@ -1,13 +1,12 @@
-@import 'styles/vars';
-
-@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import 'styles/colors';
+@import 'styles/fonts';
 
 body {
   margin: 0;
-  font-family: 'Roboto', sans-serif;
+  font-family: $default-font;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  background-color: $primary-background;
-  color: $primary-text-color;
+  background-color: $default-background;
+  color: $default-text-color;
 }

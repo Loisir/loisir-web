@@ -1,14 +1,14 @@
 import React from 'react';
 
-interface ExploreViewProps {
+interface ExploreProps {
 }
 
-export default class ExploreView extends React.Component<ExploreViewProps> {
+export default class Explore extends React.Component<ExploreProps> {
   render() {
     return (
       <div className="explore-view-container">
         <div className="explore-view">
-          <span>ExploreView</span>
+          <span>Explore</span>
         </div>
       </div>
     );

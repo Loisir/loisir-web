@@ -1,0 +1,40 @@
+@mixin container-box($background-color: $default-foreground, $text-color: $default-text-color, $border-thickness: 1px, $border-radius: 8px) {
+  background-color: $background-color;
+  color: $text-color;
+  border-radius: $border-radius;
+}
+
+@mixin colored-button($button-color: $default-blue, $button-font: $default-font, $text-color: $default-white, $border-thickness: 2px, $border-radius: 16px) {
+  font-family: $button-font;
+  background-color: $button-color;
+  color: $text-color;
+
+  border: $button-color solid $border-thickness;
+  border-radius: $border-radius;
+
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
+
+  &:active {
+    background-color: transparent;
+    color: $button-color;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+@mixin textbox($text-font: $default-font, $text-color : $default-text-color, $border-color: $default-border-color, $focus-border-color: $default-blue, $border-thickness: 2px) {
+  font-family: $text-font;
+  background-color: $default-background;
+  color: $text-color;
+  border: $border-color solid $border-thickness;
+
+  &:focus {
+    outline: none;
+    border-color: $focus-border-color;
+  }
+}

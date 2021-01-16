@@ -1,70 +1,42 @@
-@import '../../../styles/vars';
+@import '../../../styles/colors';
 @import '../../../styles/extendables';
+@import '../../../styles/mixins';
 
 .profile-container {
+  @include container-box;
+
   text-align: left;
   font-size: 13px;
 
-  padding: 12px;
+  padding: 18px;
   padding-top: 20px;
   padding-bottom: 20px;
-  max-width: 600px;
-  
+  max-width: 600px;  
   margin: 12px;
+
   @media (min-width: 640px) {
     margin-left: auto;
     margin-right: auto;
   }
 
-  background-color: $primary-foreground;
-  border: $primary-border-color 1px solid;
-
-  .profile-avatar-follow {
+  .profile-avatar {
     text-align: center;
-    display: flex;
-    flex-direction: row;
-
-    margin-left: 12px;
-    margin-right: 12px;
-
-    .follow-btn {
-      flex: 1;
-  
-      margin: auto;
-      width: 50%;
-  
-      button {
-        @extend %blue-button;
-  
-        float: right;
-  
-        width: 80px;
-        height: 34px;
-  
-        border: 0;
-        border-radius: 18px;
-      }
-
-      button:hover {
-        cursor: pointer;
-      }
-  
-      button:focus {
-        outline: none;
-        box-shadow: none;
-      }
-    }
   }
 
   .profile-details {
-    padding-left: 8px;
-    padding-right: 8px;
-
     display: flex;
     flex-direction: row;
+    margin-top: 4px;
+    margin-bottom: 4px;
 
     @media (max-width: 600px) {
       flex-direction: column;
+
+      .profile-primary {
+        div:nth-child(3) {
+          margin-bottom: 16px;
+        }
+      }
     }
 
     .profile-primary {
@@ -82,20 +54,23 @@
         
         margin-top: 26px;
         margin-bottom: 26px;
+
+        a:link, a:visited {
+          text-decoration: none;
+          color: $default-blue;
+        }
       }
     
       /* location */
       div:nth-child(3) {
         color: $muted-text-color;
-        margin-bottom: 16px;
         display: flex;
     
         /* location icon */
         img {
           width: 16px;
           height: 16px;
-    
-          padding-right: 10px;
+          margin-right: 10px;
         }
       }
     }
@@ -105,21 +80,41 @@
       float: right;
 
       display: flex;
-      flex-direction: row;
+      flex-direction: column;
       text-align: center;
 
       @media (min-width: 600px) {
         margin: auto;
       }
   
-      .stat {
-        width: 100%;
+      .stat-flex {
         flex: 1;
+        display: flex;
+        flex-direction: row;
+
+        .stat {
+          width: 100%;
+          flex: 1;
+        }
+      }
+
+      .follow-btn {
+        flex: 1;
+        width: 100%;
+
+        margin-top: 16px;
+        margin-bottom: 16px;
+    
+        button {
+          @include colored-button;
+          width: 80px;
+          height: 34px;
+        }
       }
   
       /* stat values */
       p:nth-child(2) {
-        color:$primary-blue;
+        color: $default-blue;
       }
     }
   }

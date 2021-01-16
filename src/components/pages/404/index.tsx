@@ -7,8 +7,8 @@ export default class NotFound extends React.Component {
     return (
       <main className="not-found">
         <div className="message">
-          <h3>Oops this page doesn't exist.</h3>
-          <p>We couldn't find what you were looking for</p>
+          <p>Oops! this page doesn't exist.</p>
+          <p>We couldn't find what you were looking for.</p>
           <Link to="/">
             <span>Go back to home</span>
           </Link>

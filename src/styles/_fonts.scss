@@ -1,0 +1,12 @@
+/* Font Weights */
+$font-regular: 400;
+$font-medium: 500;
+$font-semi-bold: 600;
+$font-bold: 700;
+
+/*
+ * Add your font includes here.
+ */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;900&display=swap');
+
+$default-font: 'Inter', sans-serif;
