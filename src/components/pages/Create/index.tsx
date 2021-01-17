@@ -4,7 +4,7 @@ import './index.scss';
 export default class CreatePost extends React.Component {
   render() {
     return (
-      <div className="create-container">
+      <div className="create">
         {/* <div className="caption-container">
           <input placeholder="Add some caption" autoFocus={true}/>
         </div> */}

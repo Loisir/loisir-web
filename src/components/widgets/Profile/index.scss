@@ -2,7 +2,7 @@
 @import '../../../styles/extendables';
 @import '../../../styles/mixins';
 
-.profile-container {
+.profile {
   @include container-box;
 
   text-align: left;

@@ -21,6 +21,8 @@ export default class Profile extends React.Component<ProfileProps> {
   }
 
   render() {
+
+    /* show location div in case location is provided */
     let locationDiv;
     if (this.props.location) {
       locationDiv = (
@@ -37,7 +39,7 @@ export default class Profile extends React.Component<ProfileProps> {
     }
 
     return (
-      <div className="profile-container">
+      <div className="profile">
         <div className="profile-avatar">
           <Avatar src={this.props.avatarUrl} size={80}/>
         </div>

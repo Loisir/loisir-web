@@ -2,7 +2,7 @@
 @import '../../../styles/extendables';
 @import '../../../styles/mixins';
 
-.post-container {
+.post {
   @include container-box;
   
   text-align: center;

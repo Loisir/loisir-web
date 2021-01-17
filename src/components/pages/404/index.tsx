@@ -5,7 +5,7 @@ import './index.scss';
 export default class NotFound extends React.Component {
   render() {
     return (
-      <main className="not-found">
+      <div className="not-found">
         <div className="message">
           <p>Oops! this page doesn't exist.</p>
           <p>We couldn't find what you were looking for.</p>
@@ -13,7 +13,7 @@ export default class NotFound extends React.Component {
             <span>Go back to home</span>
           </Link>
         </div>
-      </main>
+      </div>
     );
   }
 };

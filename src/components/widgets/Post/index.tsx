@@ -17,7 +17,7 @@ interface PostProps {
 export default class Post extends React.Component<PostProps> {
   render() {
     return (
-      <div className="post-container">
+      <div className="post">
         <div className="image-container">
           <img src={this.props.url} alt="" />
         </div>

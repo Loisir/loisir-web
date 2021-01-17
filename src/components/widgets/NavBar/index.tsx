@@ -4,7 +4,7 @@ import './index.scss';
 export default class NavBar extends React.Component {
   render() {
     return (
-    <div className="navbar-container">
+    <div className="navbar">
       <div>
         <span>
           <a href="/home">

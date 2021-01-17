@@ -8,8 +8,8 @@ import CreatePost from '../Create';
 export default class Home extends React.Component {
   render() {
     return (
-      <main>
-        <div className="home-container">
+      <div>
+        <div className="home">
           {/* <CreatePost /> */}
           <Profile
             username="philiptrembley"
@@ -131,7 +131,7 @@ export default class Home extends React.Component {
             comments={5236}
           />
         </div>
-      </main>
+      </div>
     );
   }
 };
