@@ -25,4 +25,5 @@ Most of the Client is left to be designed. The following things need to be imple
 ## License
 
 [![GitHub license](https://img.shields.io/github/license/Loisir/loisir-web?style=for-the-badge)](https://github.com/Loisir/loisir-web)
+
 • Licensed under the BSD 3-Clause license, see LICENSE for details.
