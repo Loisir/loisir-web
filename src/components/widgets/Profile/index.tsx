@@ -21,8 +21,6 @@ export default class Profile extends React.Component<ProfileProps> {
   }
 
   render() {
-
-    /* show location div in case location is provided */
     let locationDiv;
     if (this.props.location) {
       locationDiv = (
@@ -43,26 +41,34 @@ export default class Profile extends React.Component<ProfileProps> {
         <div className="profile-avatar">
           <Avatar src={this.props.avatarUrl} size={80}/>
         </div>
+
         <div className="profile-details">
           <div className="profile-primary">
-            <div>{this.props.username}</div>
             <div>
-              <ReactMarkdown plugins={[[gfm, {singleTilde: false}]]}>
+              {this.props.username}
+            </div>
+
+            <div>
+              <ReactMarkdown
+                plugins={[[gfm, {singleTilde: false}]]}>
                 {this.props.aboutMe || ""}
               </ReactMarkdown>
             </div>
             {locationDiv}
           </div>
+
           <div className="profile-stats">
             <div className="stat-flex">
               <div className="stat">
                 <p>Credibility</p>
                 <p>{labelNumber(this.props.credibility)}</p>
               </div>
+
               <div className="stat">
                 <p>Followers</p>
                 <p>{labelNumber(this.props.followers)}</p>
               </div>
+
               <div className="stat">
                 <p>Following</p>
                 <p>{labelNumber(this.props.following)}</p>
@@ -70,7 +76,9 @@ export default class Profile extends React.Component<ProfileProps> {
             </div>
             
             <div className="follow-btn">
-              <button onClick={this.onFollowClicked}>Follow</button>
+              <button onClick={this.onFollowClicked}>
+                Follow
+              </button>
             </div>
           </div>
         </div>
