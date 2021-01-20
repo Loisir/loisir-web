@@ -3,9 +3,8 @@
 Welcome to the official repository of __Loisir__.
 
 [![GitHub issues](https://img.shields.io/github/issues/Loisir/loisir-web?style=for-the-badge)](https://github.com/Loisir/loisir-web/issues)
-[![GitHub license](https://img.shields.io/github/license/Loisir/loisir-web?style=for-the-badge)](https://github.com/Loisir/loisir-web)
-
 [![GitHub forks](https://img.shields.io/github/forks/Loisir/loisir-web?style=for-the-badge)](https://github.com/Loisir/loisir-web/network/members)
+
 ![GitHub watchers](https://img.shields.io/github/watchers/Loisir/loisir-web?style=for-the-badge)
 ![GitHub Repo stars](https://img.shields.io/github/stars/Loisir/loisir-web?style=for-the-badge)
 
@@ -25,4 +24,5 @@ Most of the Client is left to be designed. The following things need to be imple
 
 ## License
 
+[![GitHub license](https://img.shields.io/github/license/Loisir/loisir-web?style=for-the-badge)](https://github.com/Loisir/loisir-web)
 • Licensed under the BSD 3-Clause license, see LICENSE for details.
