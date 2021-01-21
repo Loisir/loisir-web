@@ -7,7 +7,7 @@ export default class NavBar extends React.Component {
     <div className="navbar">
       <div>
         <span>
-          <a href="/home">
+          <a href="/">
             <span className="nav-item">Home</span>
           </a>
         </span>

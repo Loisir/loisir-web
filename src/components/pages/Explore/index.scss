@@ -1,8 +1,6 @@
-@import '../../../styles/vars';
+@import '../../../styles/colors';
+@import '../../../styles/extendables';
 
 .explore {
-  width: 100%;
-  height: 100%;
-
-  background-color: $primary-background;
+  @extend %page-container;
 }

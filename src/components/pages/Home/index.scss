@@ -1,3 +1,6 @@
+@import '../../../styles/colors';
+@import '../../../styles/extendables';
+
 .home {
-  padding-top: 48px;
+  @extend %page-container;
 }

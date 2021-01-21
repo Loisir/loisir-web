@@ -9,7 +9,7 @@ import './index.scss';
 import Home from './components/pages/Home';
 import About from './components/pages/About';
 import NotFound from './components/pages/404';
-import Post from './components/widgets/Post';
+import Explore from './components/pages/Explore';
 import NavBar from './components/widgets/NavBar';
 
 const App = () => (
@@ -18,9 +18,9 @@ const App = () => (
       <NavBar />
       <Switch>
         <Route path="/" exact component={Home} />
-        <Route path="/home" exact component={Home} />
+        <Route path="/feed" exact component={Home} />
         <Route path="/about" component={About} />
-        <Route path="/post" component={Post} />
+        <Route path="/explore" component={Explore} />
         <Route component={NotFound}/>
       </Switch>
     </Router>
