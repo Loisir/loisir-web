@@ -1,6 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import {
+  BrowserRouter,
+  Switch,
+  Route
+} from 'react-router-dom';
 import './index.scss';
 
 /**
@@ -14,8 +18,8 @@ import NavBar from './components/widgets/NavBar';
 
 const App = () => (
   <React.StrictMode>
-    <Router>
-      <NavBar />
+    <BrowserRouter>
+      <NavBar/>
       <Switch>
         <Route path="/" exact component={Home} />
         <Route path="/feed" exact component={Home} />
@@ -23,7 +27,7 @@ const App = () => (
         <Route path="/explore" component={Explore} />
         <Route component={NotFound}/>
       </Switch>
-    </Router>
+    </BrowserRouter>
   </React.StrictMode>
 );
 

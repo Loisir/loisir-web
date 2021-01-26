@@ -3,10 +3,12 @@
 
 body {
   margin: 0;
+  background-color: $default-background;
   font-family: $default-font;
+  color: $default-text-color;
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
-  background-color: $default-background;
-  color: $default-text-color;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-tap-highlight-color: transparent;
 }

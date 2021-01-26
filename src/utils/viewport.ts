@@ -1,4 +1,4 @@
-export const isInViewport = (elem : Element, fullyVisible : boolean) : boolean => {
+export function isInViewport (elem : Element, fullyVisible : boolean) : boolean {
   const position = elem.getBoundingClientRect();
   const elemTop = position.top;
   const elemBottom = position.bottom;

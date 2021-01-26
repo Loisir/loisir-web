@@ -3,4 +3,10 @@
 
 .home {
   @extend %page-container;
+
+  max-width: 652px;
+  padding-left: 12px;
+  padding-right: 12px;
+  margin-left: auto;
+  margin-right: auto;
 }

@@ -2,6 +2,10 @@
 
 .current-tab {
   border-bottom: $default-blue solid 2px;
+  
+  span {
+    color: $default-blue;
+  }
 }
 
 .navbar {
@@ -9,32 +13,35 @@
   top: 0px;
   width: 100%;  
   text-align: center;
-  font-size: 14px;
   background-color: $default-background;
   z-index: 100;
+}
 
-  div {
-    display: flex;
-    flex-direction: row;
-    text-align: center;
-    max-width: 626px;
-    margin: auto;
-    max-width: 260px;
+.container {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  max-width: 626px;
+  margin: auto;
+  max-width: 260px;
+}
 
-    span {
-      flex: 1;
-      padding: 6px;
-      display: block;
-      font-size: 13px;
-      
-      a {
-        color: $default-text-color;
-        text-decoration: none;
-      }
-    }
+.nav-tab {
+  flex: 1;
+  padding: 12px;
+  display: block;
+  font-size: 13px;
 
-    span:hover {
-      background-color: $default-foreground;
-    }
+  &:hover {
+    background-color: $default-foreground;
   }
+
+  a {
+    text-decoration: none;
+  }
+}
+
+.tab-span {
+  font-size: 14px;
+  color: $default-text-color;
 }
