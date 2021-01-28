@@ -11,7 +11,7 @@ Welcome to the official repository of __Loisir__.
 
 #### What is it?
 
-It is a decentralised P2P Social media platform for sharing infographic photos (or commonly known as memes) with the whole world. It is a Progressive Web App using React.
+It is a decentralised P2P Social media platform for sharing infographic photos (or commonly known as memes) with the whole world.
 
 The app is still a *Work in Progress*.
 
