@@ -1,13 +1,11 @@
 # loisir-web
-
-Welcome to the official repository of __Loisir__.
-
 [![GitHub issues](https://img.shields.io/github/issues/loisir/loisir-web?style=flat-square)](https://github.com/loisir/loisir-web/issues)
 [![GitHub license](https://img.shields.io/github/license/Loisir/loisir-web?style=flat-square)](https://github.com/Loisir/loisir-web)
-
 [![GitHub forks](https://img.shields.io/github/forks/Loisir/loisir-web?style=flat-square)](https://github.com/Loisir/loisir-web/network/members)
 ![GitHub watchers](https://img.shields.io/github/watchers/Loisir/loisir-web?style=flat-square)
 ![GitHub Repo stars](https://img.shields.io/github/stars/Loisir/loisir-web?style=flat-square)
+
+Welcome to the official repository of __Loisir__.
 
 #### What is it?
 
