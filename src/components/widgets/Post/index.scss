@@ -4,15 +4,13 @@
 
 .post {
   @include container-box;
-
   text-align: center;
   font-size: 13px;
-
   max-width: 640px;
   margin-top: 12px;
   margin-bottom: 12px;
 
-  @media (min-width: 652px) {
+  @media (min-width: 640px) {
     .post-info {
       flex-direction: row;
 
@@ -43,7 +41,7 @@
   float: left;
 }
 
-.post-username-age {
+.post-header {
   display: flex;
   flex-direction: column;
   padding-left: 8px;
@@ -52,16 +50,14 @@
     flex: 1;
     padding: 2px;
   }
+}
 
-  /* username */
-  span:nth-child(1) {
-    font-size: 13px;
-  }
+.post-header-username {
+  font-size: 13px;
+}
 
-  /* post age */
-  span:nth-child(2) {
-    @extend %muted-text;
-  }
+.post-header-age {
+  @extend %muted-text;
 }
 
 .post-actions {
@@ -72,17 +68,30 @@
   span {
     flex: 1;
     text-align: center;
+
+    &:hover {
+      cursor: pointer;
+      color: $default-blue;
+      
+      .post-action-svg {
+        fill: $default-blue;
+      }
+    }
   }
 }
 
-.post-action-img {
+.options-svg {
+  fill: $muted-text-color;
+}
+
+.post-action-svg {
+  fill: $default-text-color;
+}
+
+.post-action-svg-container {
   position: relative;
   margin-right: 16px;
-  top: 8px;
-
-  img {
-    height: 26px;
-  }
+  top: 5px;
 }
 
 .post-action-value {
@@ -101,9 +110,10 @@
     border: none;
     cursor: pointer;
 
-    img {
-      width: 18px;
-      filter: invert(0.86);
+    &:hover {
+      .options-svg {
+        fill: $default-text-color;
+      }
     }
 
     &:focus {

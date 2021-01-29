@@ -1,9 +1,18 @@
+/**
+ * The debounce() function forces a function to wait a certain amount of time before running again.
+ * The function is built to limit the number of times a function is called
+ * 
+ * @param func The function which we want to debounce
+ * @param wait How many milliseconds must pass after most recent function call, for the original function to be called
+ * @param immediate If set to true then function will be called immediately, but on subsequent calls of the debounced function original function won't be called, unless wait passed after last call
+ * @returns void
+ */
 export function debounce(
   func: (...args: any[]) => void,
   wait: number,
   immediate: boolean
 ) {
-  let timeoutId: ReturnType<typeof setTimeout> | undefined;
+  let timeout: ReturnType<typeof setTimeout> | undefined;
 
   return function (
     this: ThisParameterType<(...args: any[]) => void>,
@@ -12,7 +21,7 @@ export function debounce(
     const context = this;
     
     var invokeFunction = function () {
-      timeoutId = undefined;
+      timeout = undefined;
       if (!immediate) {
         func.apply(
           context, args
@@ -20,13 +29,13 @@ export function debounce(
       }
     };
 
-    const callNow = immediate && !timeoutId;
+    const callNow = immediate && timeout === undefined;
     
-    if (timeoutId !== undefined) {
-      clearTimeout(timeoutId);
+    if (timeout !== undefined) {
+      clearTimeout(timeout);
     }
 
-    timeoutId = setTimeout(invokeFunction, wait);
+    timeout = setTimeout(invokeFunction, wait);
 
     if (callNow) {
       func.apply(

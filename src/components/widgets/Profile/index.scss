@@ -4,10 +4,8 @@
 
 .profile {
   @include container-box;
-
   text-align: left;
   font-size: 13px;
-
   max-width: 640px;
   margin-top: 12px;
   margin-bottom: 12px;
@@ -20,9 +18,8 @@
   .profile-details {
     display: flex;
     flex-direction: row;
-    margin-top: 4px;
-    margin-bottom: 4px;
     padding: 18px;
+    padding-top: 0px;
     padding-bottom: 20px;
 
     @media (max-width: 600px) {

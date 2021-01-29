@@ -16,26 +16,11 @@ interface ProfileProps {
 };
 
 export default class Profile extends React.Component<ProfileProps> {
-  async onFollowClicked() {
+  onFollowClicked() {
     console.log('Followed!');
   }
 
   render() {
-    let locationDiv;
-    if (this.props.location) {
-      locationDiv = (
-        <div>
-          <img alt="" src="/images/maps-and-flags.png"/>
-          <span>{this.props.location}</span>
-        </div>
-      );
-    }
-    else {
-      locationDiv = (
-        <div></div>
-      );
-    }
-
     return (
       <div className="profile">
         <div className="profile-avatar">
@@ -54,7 +39,11 @@ export default class Profile extends React.Component<ProfileProps> {
                 {this.props.aboutMe || ""}
               </ReactMarkdown>
             </div>
-            {locationDiv}
+            
+            <div style={{ display: `${this.props.location ? "block" : "none"}` }}>
+              <img alt="" src="/images/maps-and-flags.png"/>
+              <span>{this.props.location}</span>
+            </div>
           </div>
 
           <div className="profile-stats">

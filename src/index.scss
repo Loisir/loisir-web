@@ -1,6 +1,12 @@
 @import 'styles/colors';
 @import 'styles/fonts';
 
+* {
+  &:focus {
+    outline: none;
+  }
+}
+
 body {
   margin: 0;
   background-color: $default-background;

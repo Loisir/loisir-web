@@ -1,7 +1,7 @@
-@mixin container-box($background-color: $default-foreground, $text-color: $default-text-color, $border-thickness: 1px, $border-radius: 8px) {
+@mixin container-box($background-color: $default-foreground, $text-color: $default-text-color, $border-thickness: 1px) {
   background-color: $background-color;
   color: $text-color;
-  border-radius: $border-radius;
+  border: $default-border-color solid 1px;
 }
 
 @mixin colored-button($button-color: $default-blue, $button-font: $default-font, $text-color: $default-white, $border-thickness: 2px, $border-radius: 16px) {

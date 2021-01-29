@@ -3,6 +3,7 @@ import moment from 'moment';
 import './index.scss';
 import Profile from '../../widgets/Profile';
 import Post from '../../widgets/Post';
+import Modal from '../../widgets/Modal';
 
 export default class Home extends React.Component {
   render() {
@@ -10,6 +11,12 @@ export default class Home extends React.Component {
       <div>
         <div className="home">
           {/* <CreatePost /> */}
+          <Modal
+            children={
+              <span>Hello</span>
+            }
+            backgroundOpacity={60}
+          />
           <Profile
             username="philiptrembley"
             aboutMe={'Use it to describe your **credentials**, expertise ✨, and goals. What’s the best way to start? The following exercises can be helpful in figuring all of that out, and will help you determine what to include based on your target audience.'}
