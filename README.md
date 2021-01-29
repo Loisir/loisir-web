@@ -1,17 +1,15 @@
 # loisir-web
+[![GitHub issues](https://img.shields.io/github/issues/loisir/loisir-web?style=flat-square)](https://github.com/loisir/loisir-web/issues)
+[![GitHub license](https://img.shields.io/github/license/Loisir/loisir-web?style=flat-square)](https://github.com/Loisir/loisir-web)
+[![GitHub forks](https://img.shields.io/github/forks/Loisir/loisir-web?style=flat-square)](https://github.com/Loisir/loisir-web/network/members)
+![GitHub watchers](https://img.shields.io/github/watchers/Loisir/loisir-web?style=flat-square)
+![GitHub Repo stars](https://img.shields.io/github/stars/Loisir/loisir-web?style=flat-square)
 
 Welcome to the official repository of __Loisir__.
 
-[![GitHub issues](https://img.shields.io/github/issues/Loisir/loisir-web?style=for-the-badge)](https://github.com/Loisir/loisir-web/issues)
-[![GitHub license](https://img.shields.io/github/license/Loisir/loisir-web?style=for-the-badge)](https://github.com/Loisir/loisir-web)
-
-[![GitHub forks](https://img.shields.io/github/forks/Loisir/loisir-web?style=for-the-badge)](https://github.com/Loisir/loisir-web/network/members)
-![GitHub watchers](https://img.shields.io/github/watchers/Loisir/loisir-web?style=for-the-badge)
-![GitHub Repo stars](https://img.shields.io/github/stars/Loisir/loisir-web?style=for-the-badge)
-
 #### What is it?
 
-It is a decentralised P2P Social media platform for sharing infographic photos (or commonly known as memes) with the whole world. It is a Progressive Web App using React.
+It is a decentralised P2P Social media platform for sharing infographic photos (or commonly known as memes) with the whole world.
 
 The app is still a *Work in Progress*.
 
