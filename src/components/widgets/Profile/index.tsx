@@ -6,7 +6,10 @@ import gfm from 'remark-gfm';
 import ReactMarkdown from 'react-markdown';
 
 interface ProfileProps {
-  avatarUrl?: string,
+  /**
+   * Profile avatar url.
+   */
+  avatarUrl: string,
   username: string,
   aboutMe?: string,
   location?: string,
@@ -55,13 +58,15 @@ export default class Profile extends React.Component<ProfileProps> {
             <div>
               {this.props.username}
             </div>
-
-            <div>
-              <ReactMarkdown
-                plugins={[[gfm, {singleTilde: false}]]}>
-                {this.props.aboutMe || ""}
-              </ReactMarkdown>
-            </div>
+            {
+              this.props.aboutMe &&
+              <div>
+                <ReactMarkdown
+                  plugins={[[gfm, {singleTilde: false}]]}>
+                  {this.props.aboutMe}
+                </ReactMarkdown>
+              </div>
+            }
             {
               this.props.location &&
               <div>

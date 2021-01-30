@@ -45,3 +45,9 @@
   font-size: 14px;
   color: $default-text-color;
 }
+
+.back-btn {
+  fill: $default-text-color;
+  cursor: pointer;
+  display: inline-block;
+}

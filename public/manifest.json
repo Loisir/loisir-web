@@ -21,5 +21,22 @@
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#008CFF",
-  "background_color": "#ffffff"
+  "background_color": "#ffffff",
+  "shorcuts": [
+    {
+      "name": "Home Page",
+      "short_name": "Home",
+      "description": "View home page"
+    },
+    {
+      "name": "Explore Page",
+      "short_name": "Explore",
+      "description": "View explore page"
+    },
+    {
+      "name": "Inbox Page",
+      "short_name": "Inbox",
+      "description": "View inbox page"
+    }
+  ]
 }

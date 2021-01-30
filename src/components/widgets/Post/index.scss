@@ -82,6 +82,14 @@
 
 .options-svg {
   fill: $muted-text-color;
+  padding: 8px;
+  border-radius: 36px;
+  cursor: pointer;
+
+  &:hover {
+    fill: $default-blue;
+    background-color: rgba($color: $default-blue, $alpha: 0.1);
+  }
 }
 
 .post-action-svg {
@@ -100,21 +108,13 @@
 
 .post-options {
   flex: 1;
-  padding-right: 12px;
   text-align: right;
   height: 40%;
   margin: auto;
 
-  button {
+  div {
     background-color: transparent;
     border: none;
-    cursor: pointer;
-
-    &:hover {
-      .options-svg {
-        fill: $default-text-color;
-      }
-    }
 
     &:focus {
       outline: none;

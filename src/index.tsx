@@ -10,7 +10,7 @@ import {
 } from 'react-router-dom';
 import './index.scss';
 
-import NavBar from './components/widgets/NavBar';
+import Navbar from './components/widgets/Navbar';
 
 /**
  * Add your components here.
@@ -23,7 +23,7 @@ const NotFound = lazy(() => import('./components/pages/404'));
 const App = () => (
   <React.StrictMode>
     <BrowserRouter>
-      <NavBar/>
+      <Navbar/>
       <Suspense fallback={<div>Loading...</div>}>
         <Switch>
           <Route path="/" exact component={Home} />
