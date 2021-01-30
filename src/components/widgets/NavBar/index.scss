@@ -14,11 +14,10 @@
   width: 100%;  
   text-align: center;
   background-color: $default-background;
-  z-index: 100;
   border-bottom: $default-border-color solid 1px;
 }
 
-.container {
+.navbar-container {
   display: flex;
   flex-direction: row;
   text-align: center;
@@ -32,7 +31,6 @@
   padding: 16px;
   display: block;
   font-size: 13px;
-  // border-bottom: transparent solid 2px;
 
   &:hover {
     background-color: $default-foreground;

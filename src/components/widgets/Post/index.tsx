@@ -1,19 +1,47 @@
 import React from 'react';
 import moment from 'moment';
-import './index.scss';
 import Avatar from '../Avatar';
 import { labelNumber } from '../../../utils';
 import gfm from 'remark-gfm';
 import ReactMarkdown from 'react-markdown';
+import './index.scss';
 
 interface PostProps {
+  /**
+   * Post image source url
+   */
   url: string,
-  avatarUrl?: string,
+
+  /**
+   * Author profile avatar image url
+   */
+  avatarUrl: string,
+
+  /**
+   * Author username
+   */
   username: string,
+
+  /**
+   * Post creation time/date
+   */
   createdTime: moment.Moment
-  caption?: string,
-  likes?: number,
-  comments?: number 
+
+  /**
+   * Post caption.
+   * Expects markup text.
+   */
+  caption: string,
+
+  /**
+   * Likes on this post.
+   */
+  likes: number,
+  
+  /**
+   * Likes on this post.
+   */
+  comments: number,
 }
 
 export default class Post extends React.Component<PostProps> {

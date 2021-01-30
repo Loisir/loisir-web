@@ -13,7 +13,7 @@ It is a decentralised P2P Social media platform for sharing infographic photos (
 
 The app is still a *Work in Progress*.
 
-## To-Do:
+## To-Do
 
 Most of the Client is left to be designed. The following things need to be implemented.
 

@@ -1,12 +1,9 @@
 import React from 'react';
 import './index.scss';
 
-export default class NavBar extends React.Component {
-  constructor(props: any) {
-    super(props);
-    this.handleScroll = this.handleScroll.bind(this);
-  }
+export const NAV_BAR_ZINDEX = 100;
 
+export default class NavBar extends React.Component {
   componentDidMount() {
     window.addEventListener('scroll', this.handleScroll);
   }
@@ -21,8 +18,11 @@ export default class NavBar extends React.Component {
 
   render() {
     return (
-    <div className="navbar">
-      <div className="container">
+    <div className="navbar"
+      style ={{
+        zIndex: NAV_BAR_ZINDEX
+      }}>
+      <div className="navbar-container">
         <span className="nav-tab">
           <a href="/">
             <span className="tab-span">Home</span>

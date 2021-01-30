@@ -13,11 +13,34 @@ interface ProfileProps {
   credibility: number,
   followers: number,
   following: number
+
+  /**
+   * Minimal Post View.
+   * Hides most details.
+   * 
+   * Defaults to false
+   */
+  isMinimalView?: boolean
 };
 
 export default class Profile extends React.Component<ProfileProps> {
+  public static defaultProps = {
+    isMinimalView: false
+  }
+
   onFollowClicked() {
     console.log('Followed!');
+  }
+
+  locationDiv() {
+    if (this.props.location) {
+      return (
+        <div>
+          <img alt="" src="/images/maps-and-flags.png"/>
+          <span>{this.props.location}</span>
+        </div>
+      )
+    }
   }
 
   render() {
@@ -39,11 +62,13 @@ export default class Profile extends React.Component<ProfileProps> {
                 {this.props.aboutMe || ""}
               </ReactMarkdown>
             </div>
-            
-            <div style={{ display: `${this.props.location ? "block" : "none"}` }}>
-              <img alt="" src="/images/maps-and-flags.png"/>
-              <span>{this.props.location}</span>
-            </div>
+            {
+              this.props.location &&
+              <div>
+                <img alt="" src="/images/maps-and-flags.png"/>
+                <span>{this.props.location}</span>
+              </div>
+            }
           </div>
 
           <div className="profile-stats">
@@ -64,7 +89,7 @@ export default class Profile extends React.Component<ProfileProps> {
               </div>
             </div>
             
-            <div className="follow-btn">
+            <div className="follow-div">
               <button onClick={this.onFollowClicked}>
                 Follow
               </button>
