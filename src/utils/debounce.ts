@@ -4,7 +4,8 @@
  * 
  * @param func The function which we want to debounce
  * @param wait How many milliseconds must pass after most recent function call, for the original function to be called
- * @param immediate If set to true then function will be called immediately, but on subsequent calls of the debounced function original function won't be called, unless wait passed after last call
+ * @param immediate If set to true then function will be called immediately,
+ *        but on subsequent calls of the debounced function original function won't be called, unless wait passed after last call
  * @returns void
  */
 export function debounce(

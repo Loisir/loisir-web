@@ -6,7 +6,7 @@ import gfm from 'remark-gfm';
 import ReactMarkdown from 'react-markdown';
 import './index.scss';
 
-interface PostProps {
+interface IPostProps {
   /**
    * Post image source url
    */
@@ -44,7 +44,11 @@ interface PostProps {
   comments: number,
 }
 
-export default class Post extends React.Component<PostProps> {
+export default class Post extends React.Component<IPostProps> {
+  public static defaultProps = {
+    caption: ''
+  };
+
   onOptionsClicked() {
     console.log("Options clicked!");
   }
@@ -61,13 +65,18 @@ export default class Post extends React.Component<PostProps> {
     console.log("Comments clicked!");
   }
 
+  onAvatarClicked = () => {
+    // redirect to user profile page.
+    console.log("Avatar clicked!");
+  }
+
   render() {
     return (
       <div className="post">
         <div className="post-info">
           <div>
             <div className="avatar-container">
-              <Avatar src={this.props.avatarUrl} size={40}/>
+              <Avatar src={this.props.avatarUrl} size={40} onClick={this.onAvatarClicked}/>
             </div>
 
             <div className="post-header">
@@ -91,7 +100,7 @@ export default class Post extends React.Component<PostProps> {
 
         <div className="post-caption">
           <ReactMarkdown plugins={[[gfm, {singleTilde: false}]]}>
-            {this.props.caption || ""}
+            {this.props.caption}
           </ReactMarkdown>
         </div>
         
@@ -111,7 +120,7 @@ export default class Post extends React.Component<PostProps> {
               </span>
 
               <span className="post-action-value">
-                <p>{labelNumber(this.props.likes || 0)}</p>
+                <p>{labelNumber(this.props.likes)}</p>
               </span>
             </span>
 

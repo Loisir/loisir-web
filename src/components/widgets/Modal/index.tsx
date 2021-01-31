@@ -4,7 +4,7 @@ import './index.scss';
 export const DEFAULT_MODAL_BACKGROUND_ALPHA = .6; // 60%
 export const MODAL_ZINDEX = 1000;
 
-interface ModalProps {
+interface IModalProps {
   /**
    * CSS alpha opacity.
    * Default value is DEFAULT_MODAL_BACKGROUND_ALPHA.
@@ -23,8 +23,10 @@ interface ModalProps {
   isVisible?: boolean,
 };
 
+interface IModalState {}
+
 /** Opens a modal windows */
-export default class Modal extends React.Component<ModalProps> {
+export default class Modal extends React.Component<IModalProps, IModalState> {
   public static defaultProps = {
     backgroundAlpha: DEFAULT_MODAL_BACKGROUND_ALPHA,
     isVisible: false
@@ -41,7 +43,7 @@ export default class Modal extends React.Component<ModalProps> {
     return (
       <div className="modal"
         style={{
-          backgroundColor: 'rgba(0,0,0,' + this.props.backgroundAlpha + ')',
+          backgroundColor: `rgba(0,0,0, ${ this.props.backgroundAlpha })`,
           display: this.props.isVisible ? "block" : "none",
           zIndex: MODAL_ZINDEX
         }}>

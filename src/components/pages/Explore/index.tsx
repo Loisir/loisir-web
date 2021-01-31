@@ -2,10 +2,10 @@ import React from 'react';
 import './index.scss';
 import { generateAvatarSvg } from '../../../utils';
 
-interface ExploreProps {
+interface IExploreProps {
 }
 
-export default class Explore extends React.Component<ExploreProps> {
+export default class Explore extends React.Component<IExploreProps> {
   render() {
     return (
       <div className="explore">

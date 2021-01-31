@@ -5,7 +5,7 @@ import Avatar from '../Avatar';
 import gfm from 'remark-gfm';
 import ReactMarkdown from 'react-markdown';
 
-interface ProfileProps {
+interface IProfileProps {
   /**
    * Profile avatar url.
    */
@@ -26,7 +26,7 @@ interface ProfileProps {
   isMinimalView?: boolean
 };
 
-export default class Profile extends React.Component<ProfileProps> {
+export default class Profile extends React.Component<IProfileProps> {
   public static defaultProps = {
     isMinimalView: false
   }
