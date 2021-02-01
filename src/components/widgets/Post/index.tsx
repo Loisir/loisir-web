@@ -1,6 +1,6 @@
 import React from 'react';
 import moment from 'moment';
-import Avatar from '../Avatar';
+import Avatar from '../Avatar/Avatar';
 import { labelNumber } from '../../../utils';
 import gfm from 'remark-gfm';
 import ReactMarkdown from 'react-markdown';

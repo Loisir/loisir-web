@@ -1,5 +1,4 @@
 import React from 'react';
-import { debounce } from '../../../utils';
 import './index.scss';
 
 export const NAV_BAR_ZINDEX = 100;
