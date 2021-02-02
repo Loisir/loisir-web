@@ -3,10 +3,10 @@ export const AVATAR_SVG_SIZE = 128;
 
 /**
  * Creates an SVG with a avatar icon over a color background
- * based on a hash string
+ * based on a hash string.
  * 
- * @param color Background color of the svg avatar
- * @returns Svg string source
+ * @param {string} color Background color of the svg avatar
+ * @returns {string} Svg string source
  */
 export function generateAvatarSvg(color: string): string {
   // TODO: needs major fix on avatar image

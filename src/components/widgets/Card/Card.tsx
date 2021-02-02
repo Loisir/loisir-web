@@ -5,7 +5,7 @@ export default class Card extends React.Component<ICardProps> {
   render() {
     return (
       <div>
-
+        
       </div>
     );
   }

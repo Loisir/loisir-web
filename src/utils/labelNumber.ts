@@ -3,8 +3,8 @@
  * e.g
  *  11111 as 11.1 K
  * 
- * @param num Number which we want to label
- * @returns Labeled string of the number with unit suffix.
+ * @param {number} num Number which we want to label
+ * @returns {string} Labeled string of the number with unit suffix.
  */
 export function labelNumber(num: number) : string {
   if (num >= 1000000000) {

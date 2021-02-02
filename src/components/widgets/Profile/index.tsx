@@ -1,7 +1,7 @@
 import React from 'react';
 import './index.scss';
 import { labelNumber } from '../../../utils';
-import Avatar from '../Avatar/Avatar';
+import { Avatar } from '../Avatar';
 import gfm from 'remark-gfm';
 import ReactMarkdown from 'react-markdown';
 

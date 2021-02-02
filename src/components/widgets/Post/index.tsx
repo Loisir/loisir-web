@@ -1,10 +1,10 @@
 import React from 'react';
 import moment from 'moment';
-import Avatar from '../Avatar/Avatar';
+import { Avatar } from '../Avatar';
 import { labelNumber } from '../../../utils';
 import gfm from 'remark-gfm';
 import ReactMarkdown from 'react-markdown';
-import './index.scss';
+import './Post.scss';
 
 interface IPostProps {
   /**
@@ -76,7 +76,7 @@ export default class Post extends React.Component<IPostProps> {
         <div className="post-info">
           <div>
             <div className="avatar-container">
-              <Avatar src={this.props.avatarUrl} size={40} onClick={this.onAvatarClicked}/>
+              <Avatar src={this.props.avatarUrl} size={40} onClick={this.onAvatarClicked} options={{ borderRadius: "9999px" }}/>
             </div>
 
             <div className="post-header">

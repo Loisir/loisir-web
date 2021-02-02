@@ -21,13 +21,10 @@ export interface IAvatarProps
    */
   badge?: React.ReactNode;
   
-  active?: boolean;
-
   /**
-   * Whether or not this avatar is circular.
-   * Default value is true.
+   * Whether or not this avatar is active.
    */
-  isCircular?: boolean;
+  active?: boolean;
 
   /**
    * Fallback avatar source.
@@ -36,6 +33,11 @@ export interface IAvatarProps
    * avatar source is not available.
    */
   fallback?: React.ReactElement;
+
+  /**
+   * Avatar style options
+   */
+  options?: AvatarOptions;
 }
 
 /**

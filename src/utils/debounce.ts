@@ -1,12 +1,12 @@
 /**
- * The debounce() function forces a function to wait a certain amount of time before running again.
+ * The debounce function forces a function to wait a certain amount of time before running again.
  * The function is built to limit the number of times a function is called
  * 
  * @param func The function which we want to debounce
- * @param wait How many milliseconds must pass after most recent function call, for the original function to be called
- * @param immediate If set to true then function will be called immediately,
+ * @param {number} wait How many milliseconds must pass after most recent function call, for the original function to be called
+ * @param {boolean} immediate If set to true then function will be called immediately,
  *        but on subsequent calls of the debounced function original function won't be called, unless wait passed after last call
- * @returns void
+ * @returns {void}
  */
 export function debounce(
   func: (...args: any[]) => void,
