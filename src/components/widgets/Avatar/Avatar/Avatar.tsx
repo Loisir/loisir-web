@@ -1,41 +1,46 @@
-import { render } from '@testing-library/react';
 import React from 'react';
-import { DEFAULT_AVATAR_SIZE, IAvatarProps } from './Avatar.types';
+import { DEV_ENV } from '../../../../utils';
+import {
+  IAvatarProps,
+  IAvatarImageProps
+} from './Avatar.types';
 
-// export class Avatar
-//   extends React.Component<IAvatarProps> { 
-//   public static defaultProps = {
-//     size: DEFAULT_AVATAR_SIZE
-//   };
-
-//   render() {
-//     return(
-//       <img
-//         alt=""
-//         style={{
-//           width: this.props.size,
-//           height: this.props.size,
-//           borderRadius: this.props.options?.borderRadius,
-//           ...this.props.style
-//         }}
-//         src={this.props.src}
-//         {...this.props}
-//       />
-//     );
-//   }
-// }
-
-export const Avatar = React.forwardRef((props: IAvatarProps, ref: React.Ref<HTMLDivElement>) => {
-  const state = {
-    
-  };
+export const Avatar = React.forwardRef(
+  function Avatar(
+    props: IAvatarProps,
+    ref: React.Ref<HTMLSpanElement>) {
+  const {
+    alt,
+    src
+  } = props;
 
   return (
-    <div ref={ref}
+    <span ref={ref}
       {...props}
       className={props.className}
-    />
+    >
+      <AvatarImage
+        src={src}
+      />
+    </span>
   );
 });
 
-Avatar.displayName = 'Avatar';
+if (DEV_ENV) {
+  Avatar.displayName = 'Avatar';
+}
+
+export const AvatarImage = ({
+  src,
+}: IAvatarImageProps) => {
+  return (
+    <img
+      src={src}
+      alt=''
+    />
+  );
+};
+
+if (DEV_ENV) {
+  Avatar.displayName = 'AvatarImage';
+}

@@ -1,6 +1,6 @@
 /**
  * The debounce function forces a function to wait a certain amount of time before running again.
- * The function is built to limit the number of times a function is called
+ * The function is built to limit the number of times a function is called.
  * 
  * @param func The function which we want to debounce
  * @param {number} wait How many milliseconds must pass after most recent function call, for the original function to be called

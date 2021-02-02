@@ -1,5 +1,7 @@
+import React from "react";
+
 export interface IAvatarProps
-  extends Omit<React.DetailedHTMLProps<React.ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement>, "sizes"> {
+  extends React.ImgHTMLAttributes<HTMLImageElement> {
   /**
    * Image source of avatar
    */
@@ -71,4 +73,10 @@ export type AvatarOptions = {
    * Opacity of this icon when `active=false`
    */
   inactiveOpacity?: string | number;
+};
+
+export interface IAvatarImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
+  circular?: boolean;
+  rounded?: boolean;
+  name?: string;
 };
