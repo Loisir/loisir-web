@@ -1,12 +1,15 @@
-import React from "react";
-import { IBadgeProps } from "./Badge.types";
+import React from 'react';
+import { IBadgeProps } from './Badge.types';
 
-export default class Badge extends React.Component<IBadgeProps> {
-  render() {
-    return (
-      <div>
-        
-      </div>
-    );
-  }
-}
+export const Badge = React.forwardRef(
+  function Badge(
+    props: IBadgeProps,
+    ref: React.Ref<HTMLDivElement>) {
+  return (
+    <div
+      ref={ref}
+      {...props}
+      
+    />
+  );
+})

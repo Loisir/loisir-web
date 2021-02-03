@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { DEV_ENV } from '../../../../utils';
 import {
   IAvatarProps,
@@ -20,6 +20,7 @@ export const Avatar = React.forwardRef(
       className={props.className}
     >
       <AvatarImage
+        alt={alt}
         src={src}
       />
     </span>
@@ -30,13 +31,35 @@ if (DEV_ENV) {
   Avatar.displayName = 'Avatar';
 }
 
+type Status = 'loading' | 'failed' | 'pending' | 'loaded';
+
+export function useLoaded({src, srcSet}: IAvatarProps) {
+  const {
+    src,
+    srcSet
+  } = props;
+
+  const [status, setStatus] = React.useState<Status>('pending');
+
+  useEffect(() => {
+    if (!src || !srcSet)
+  });
+};
+
 export const AvatarImage = ({
+  alt,
   src,
 }: IAvatarImageProps) => {
   return (
     <img
+      alt={alt}
       src={src}
-      alt=''
+      style={{
+        width: '100%',
+        height: '100%',
+        objectFit: 'cover',
+        textAlign: 'center'
+      }}
     />
   );
 };

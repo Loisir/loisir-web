@@ -3,6 +3,11 @@ import React from "react";
 export interface IAvatarProps
   extends React.ImgHTMLAttributes<HTMLImageElement> {
   /**
+   * Alternate attrib for rendering img element
+   */
+  alt?: string;
+
+  /**
    * Image source of avatar
    */
   src?: string;
@@ -16,7 +21,7 @@ export interface IAvatarProps
    * Size of the Avatar in CSS units.
    * Default value is DEFAULT_AVATAR_SIZE.
    */
-  size?: string | number;
+  size?: AvatarSizeValue;
 
   /**
    * Avatar Badge
@@ -75,8 +80,4 @@ export type AvatarOptions = {
   inactiveOpacity?: string | number;
 };
 
-export interface IAvatarImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
-  circular?: boolean;
-  rounded?: boolean;
-  name?: string;
-};
+export interface IAvatarImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {};
