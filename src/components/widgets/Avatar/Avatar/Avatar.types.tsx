@@ -45,7 +45,7 @@ export interface IAvatarProps
    * Avatar style options
    */
   options?: AvatarOptions;
-}
+};
 
 /**
  * Restricted set of avatar sizes.
@@ -80,4 +80,12 @@ export type AvatarOptions = {
   inactiveOpacity?: string | number;
 };
 
-export interface IAvatarImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {};
+export interface IUseImageProps {
+  src?: string;
+  srcSet?: string;
+  sizes?: string;
+  fallbackSrc?: string;
+};
+
+export interface IAvatarImageProps
+  extends React.ImgHTMLAttributes<HTMLImageElement> {};

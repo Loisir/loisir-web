@@ -1,29 +1,99 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { DEV_ENV } from '../../../../utils';
 import {
   IAvatarProps,
-  IAvatarImageProps
+  IAvatarImageProps,
+  IUseImageProps
 } from './Avatar.types';
+
+type Status = 'loading' | 'failed' | 'pending' | 'loaded';
+
+export function useImage({
+  src,
+  srcSet,
+  sizes,
+  fallbackSrc
+}: IUseImageProps) : Status {
+  const [status, setStatus] = React.useState<Status>('pending');
+
+  React.useEffect(() => {
+    if (!src || !srcSet) {
+      return undefined;
+    }
+    
+    setStatus('loading');
+
+    let active = true;
+    const image = new Image();
+    image.src = src;
+    if (srcSet) {
+      image.srcset = srcSet;
+    }
+
+    if (sizes) {
+      image.sizes = sizes;
+    }
+
+    image.onload = () => {
+      if (!active) {
+        return;
+      }
+      setStatus('loaded');
+    }
+
+    image.onerror = () => {
+      if (!active) {
+        return;
+      }
+      setStatus('failed');
+    }
+
+    return () => {
+      active = false;
+    }
+
+  }, [src, srcSet, sizes]);
+
+  return status;
+};
 
 export const Avatar = React.forwardRef(
   function Avatar(
     props: IAvatarProps,
-    ref: React.Ref<HTMLSpanElement>) {
+    ref: React.Ref<HTMLDivElement>) {
   const {
     alt,
-    src
+    src,
+    srcSet
   } = props;
 
-  return (
-    <span ref={ref}
-      {...props}
-      className={props.className}
-    >
+  let children = null;
+
+  const status = useImage({src, srcSet});
+  const hasImg = src || srcSet;
+  const hasImgNotFailing = hasImg && status !== 'failed';
+
+  if (hasImgNotFailing) {
+    children = (
       <AvatarImage
         alt={alt}
         src={src}
       />
-    </span>
+    );
+  } else if (hasImg && alt) {
+    children = alt[0];
+  } else {
+    // fallback avatar goes here.
+  }
+
+  return (
+    <div
+      ref={ref}
+      {...props}
+      className={props.className}
+    >
+      {children}
+    </div>
   );
 });
 
@@ -31,28 +101,12 @@ if (DEV_ENV) {
   Avatar.displayName = 'Avatar';
 }
 
-type Status = 'loading' | 'failed' | 'pending' | 'loaded';
-
-export function useLoaded({src, srcSet}: IAvatarProps) {
-  const {
-    src,
-    srcSet
-  } = props;
-
-  const [status, setStatus] = React.useState<Status>('pending');
-
-  useEffect(() => {
-    if (!src || !srcSet)
-  });
-};
-
 export const AvatarImage = ({
-  alt,
   src,
 }: IAvatarImageProps) => {
   return (
     <img
-      alt={alt}
+      alt=''
       src={src}
       style={{
         width: '100%',
