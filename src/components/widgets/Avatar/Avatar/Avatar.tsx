@@ -3,17 +3,22 @@ import { DEV_ENV } from '../../../../utils';
 import {
   IAvatarProps,
   IAvatarImageProps,
-  IUseImageProps
+  IUseImageProps,
+  AvatarSizeValue,
+  avatarSizeValues
 } from './Avatar.types';
 
 type Status = 'loading' | 'failed' | 'pending' | 'loaded';
 
-export function useImage({
-  src,
-  srcSet,
-  sizes,
-  fallbackSrc
-}: IUseImageProps) : Status {
+export function useStatus(
+  props: IUseImageProps) : Status {
+  const {
+    src,
+    srcSet,
+    sizes,
+    crossOrigin
+  } = props;
+
   const [status, setStatus] = React.useState<Status>('pending');
 
   React.useEffect(() => {
@@ -34,6 +39,10 @@ export function useImage({
       image.sizes = sizes;
     }
 
+    if (crossOrigin) {
+      image.crossOrigin = crossOrigin;
+    }
+
     image.onload = () => {
       if (!active) {
         return;
@@ -52,36 +61,42 @@ export function useImage({
       active = false;
     }
 
-  }, [src, srcSet, sizes]);
+  }, [src, srcSet, sizes, crossOrigin]);
 
   return status;
 };
 
-export const Avatar = React.forwardRef(
-  function Avatar(
-    props: IAvatarProps,
-    ref: React.Ref<HTMLDivElement>) {
+const getNearestAvatarSize = (customSize: number) : AvatarSizeValue => {
+  for (let i = avatarSizeValues.length - 1; i > 0; i--) {
+    return avatarSizeValues[i];
+  }
+
+  return avatarSizeValues[0];
+};
+
+export const Avatar = React.forwardRef((
+  props: IAvatarProps,
+  ref: React.Ref<HTMLDivElement>) => {
   const {
-    alt,
-    src,
-    srcSet
+    label,
+    image
   } = props;
 
   let children = null;
 
-  const status = useImage({src, srcSet});
-  const hasImg = src || srcSet;
+  const status = useStatus({src, srcSet});
+  const hasImg = image;
   const hasImgNotFailing = hasImg && status !== 'failed';
 
   if (hasImgNotFailing) {
     children = (
       <AvatarImage
-        alt={alt}
-        src={src}
+        alt={label}
+        src={image}
       />
     );
-  } else if (hasImg && alt) {
-    children = alt[0];
+  } else if (hasImg && label) {
+    children = label;
   } else {
     // fallback avatar goes here.
   }
