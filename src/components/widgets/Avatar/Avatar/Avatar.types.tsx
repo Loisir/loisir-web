@@ -1,8 +1,9 @@
-import React, { ImgHTMLAttributes } from "react";
+import { ComponentProps } from "../../../../utils";
 import { IBadgeProps } from "../Badge";
 
 export interface IAvatarProps
-  extends React.HTMLAttributes<HTMLElement> {
+  extends ComponentProps,
+   React.HTMLAttributes<HTMLElement> {
   /**
    * Alternate attrib for rendering img element
    */
@@ -15,12 +16,17 @@ export interface IAvatarProps
 
   /**
    * Size of the Avatar.
-   * Default value is DEFAULT_AVATAR_SIZE.
+   * 
+   * @default 32
    */
   size?: AvatarSizeValue;
   
   /**
    * Whether or not this avatar is active.
+   * * `true`: normal display
+   * * `false`: avatar would be partially transparent
+   * 
+   * @default true
    */
   active?: boolean;
 
@@ -66,13 +72,6 @@ export type AvatarOptions = {
    * Opacity of this icon when `active={false}`
    */
   inactiveOpacity?: string | number;
-};
-
-export interface IUseImageProps {
-  src?: string;
-  srcSet?: string;
-  sizes?: string;
-  crossOrigin?: ImgHTMLAttributes<any>['crossOrigin'];
 };
 
 export interface IAvatarImageProps

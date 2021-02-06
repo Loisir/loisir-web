@@ -1,6 +1,9 @@
 import React from "react";
+import { ComponentProps } from '../../../../utils';
 
-export interface IBadgeProps extends React.HTMLAttributes<HTMLElement> {
+export interface IBadgeProps
+  extends ComponentProps,
+  React.HTMLAttributes<HTMLElement> {
   /**
    * Size of this badge
    */

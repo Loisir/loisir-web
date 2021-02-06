@@ -3,54 +3,36 @@ import { DEV_ENV } from '../../../../utils';
 import {
   IAvatarProps,
   IAvatarImageProps,
-  IUseImageProps,
   AvatarSizeValue,
   avatarSizeValues
 } from './Avatar.types';
 
 type Status = 'loading' | 'failed' | 'pending' | 'loaded';
 
-export function useStatus(
-  props: IUseImageProps) : Status {
-  const {
-    src,
-    srcSet,
-    sizes,
-    crossOrigin
-  } = props;
-
+export function useLoaded(
+  image?: string
+) : Status {
   const [status, setStatus] = React.useState<Status>('pending');
 
   React.useEffect(() => {
-    if (!src || !srcSet) {
+    if (!image) {
       return undefined;
     }
     
     setStatus('loading');
 
     let active = true;
-    const image = new Image();
-    image.src = src;
-    if (srcSet) {
-      image.srcset = srcSet;
-    }
+    const img = new Image();
+    img.src = image;
 
-    if (sizes) {
-      image.sizes = sizes;
-    }
-
-    if (crossOrigin) {
-      image.crossOrigin = crossOrigin;
-    }
-
-    image.onload = () => {
+    img.onload = () => {
       if (!active) {
         return;
       }
       setStatus('loaded');
     }
 
-    image.onerror = () => {
+    img.onerror = () => {
       if (!active) {
         return;
       }
@@ -61,7 +43,7 @@ export function useStatus(
       active = false;
     }
 
-  }, [src, srcSet, sizes, crossOrigin]);
+  }, [image]);
 
   return status;
 };
@@ -84,7 +66,7 @@ export const Avatar = React.forwardRef((
 
   let children = null;
 
-  const status = useStatus({src, srcSet});
+  const status = useLoaded(image);
   const hasImg = image;
   const hasImgNotFailing = hasImg && status !== 'failed';
 

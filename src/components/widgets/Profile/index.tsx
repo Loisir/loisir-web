@@ -50,7 +50,7 @@ export default class Profile extends React.Component<IProfileProps> {
     return (
       <div className="profile">
         <div className="profile-avatar">
-          <Avatar src={this.props.avatarUrl} size={32}/>
+          <Avatar image={this.props.avatarUrl} size={32}/>
         </div>
 
         <div className="profile-details">
