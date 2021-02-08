@@ -1,9 +1,7 @@
-import { ComponentProps } from "../../../../utils";
 import { IBadgeProps } from "../Badge";
 
 export interface IAvatarProps
-  extends ComponentProps,
-   React.HTMLAttributes<HTMLElement> {
+  extends React.HTMLAttributes<HTMLElement> {
   /**
    * Alternate attrib for rendering img element
    */

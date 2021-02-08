@@ -2,9 +2,7 @@ import React from 'react';
 import { DEV_ENV } from '../../../../utils';
 import {
   IAvatarProps,
-  IAvatarImageProps,
-  AvatarSizeValue,
-  avatarSizeValues
+  IAvatarImageProps
 } from './Avatar.types';
 
 type Status = 'loading' | 'failed' | 'pending' | 'loaded';
@@ -46,14 +44,6 @@ export function useLoaded(
   }, [image]);
 
   return status;
-};
-
-const getNearestAvatarSize = (customSize: number) : AvatarSizeValue => {
-  for (let i = avatarSizeValues.length - 1; i > 0; i--) {
-    return avatarSizeValues[i];
-  }
-
-  return avatarSizeValues[0];
 };
 
 export const Avatar = React.forwardRef((

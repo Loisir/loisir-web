@@ -1,15 +1,22 @@
 import React from "react";
-import { ComponentProps } from '../../../../utils';
 
 export interface IBadgeProps
-  extends ComponentProps,
-  React.HTMLAttributes<HTMLElement> {
+  extends React.HTMLAttributes<HTMLElement> {
   /**
    * Size of this badge
    */
   size?: 'small' | 'medium' | 'large';
 
+  /**
+   * Badge icon
+   */
   icon?: React.ReactNode;
+
+  /**
+   * Badge user status.
+   * 
+   * @default "unknown"
+   */
   state?: 'success' | 'info' | 'warning' | 'error' | 'unknown';
 
   /**
