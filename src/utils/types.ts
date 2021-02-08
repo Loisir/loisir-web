@@ -1,5 +1,3 @@
-import React from "react";
-
 /**
  * Construct a type with the properties of T and P merged.
  */

@@ -3,12 +3,14 @@ import React from "react";
 export interface IBadgeProps
   extends React.HTMLAttributes<HTMLElement> {
   /**
-   * Size of this badge
+   * Size of this badge.
+   * 
+   * @default 'small'
    */
   size?: 'small' | 'medium' | 'large';
 
   /**
-   * Badge icon
+   * Badge icon.
    */
   icon?: React.ReactNode;
 

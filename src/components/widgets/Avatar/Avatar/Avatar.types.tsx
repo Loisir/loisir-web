@@ -1,3 +1,4 @@
+import React from "react";
 import { IBadgeProps } from "../Badge";
 
 export interface IAvatarProps
@@ -11,6 +12,12 @@ export interface IAvatarProps
    * Image source of avatar
    */
   image?: string;
+
+  /**
+   * Fallback icon to show in case image fails
+   * to load.
+   */
+  fallbackIcon?: React.ReactNode;
 
   /**
    * Size of the Avatar.

@@ -1,22 +1,14 @@
 import React from 'react';
 import { IBadgeProps } from './Badge.types';
 
-export const Badge = React.forwardRef((
-  props: IBadgeProps,
-  ref: React.Ref<HTMLDivElement>) => {
+export const Badge = React.forwardRef<HTMLDivElement, IBadgeProps>((props, ref) => {
   const {
-    size,
-    ...rest
+    icon,
   } = props;
 
-  // const 
-
   return (
-    <div
-      ref={ref}
-      {...props}
-    >
-      {props.icon}
+    <div ref={ref} {...props}>
+      {icon}
     </div>
   );
-})
+});

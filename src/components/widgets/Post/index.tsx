@@ -76,7 +76,7 @@ export default class Post extends React.Component<IPostProps> {
         <div className="post-info">
           <div>
             <div className="avatar-container">
-              <Avatar image={this.props.avatarUrl} size={40} onClick={this.onAvatarClicked} options={{ borderRadius: "9999px" }}/>
+              <Avatar label={'avatar'} size={40} onClick={this.onAvatarClicked} options={{ borderRadius: "9999px" }}/>
             </div>
 
             <div className="post-header">

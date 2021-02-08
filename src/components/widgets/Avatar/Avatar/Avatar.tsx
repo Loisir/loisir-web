@@ -46,12 +46,19 @@ export function useLoaded(
   return status;
 };
 
-export const Avatar = React.forwardRef((
-  props: IAvatarProps,
-  ref: React.Ref<HTMLDivElement>) => {
+const DefaultAvatar = (props: React.SVGProps<SVGSVGElement>) => {
+  return (
+    <svg {...props}>
+      
+    </svg>
+  );
+};
+
+export const Avatar = React.forwardRef<HTMLDivElement, IAvatarProps>((props, ref) => {
   const {
     label,
-    image
+    image,
+    fallbackIcon
   } = props;
 
   let children = null;
@@ -62,23 +69,16 @@ export const Avatar = React.forwardRef((
 
   if (hasImgNotFailing) {
     children = (
-      <AvatarImage
-        alt={label}
-        src={image}
-      />
+      <AvatarImage alt={label} src={image}/>
     );
   } else if (hasImg && label) {
     children = label;
   } else {
-    // fallback avatar goes here.
+    children = fallbackIcon || <DefaultAvatar />;
   }
 
   return (
-    <div
-      ref={ref}
-      {...props}
-      className={props.className}
-    >
+    <div ref={ref} {...props} className={props.className}>
       {children}
     </div>
   );
