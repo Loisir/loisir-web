@@ -3,25 +3,25 @@ $default-white: #FFFFFF;
 $blue-text-color: $default-blue;
 
 /* Dark-Theme */
-// $default-background: #252528;
-// $default-foreground: #2E2E32;
-// 
-// $default-border-color: #383838;
-// $default-border-highlight-color: #636363;
-// 
-// $default-text-color: #F5F5F5;
-// $muted-text-color: #AAAAAA;
-// 
-// $image-container-color: #202027;
+$default-background: #1A1A1A;
+$default-foreground: #222222;
 
-/* Light-Theme */
-$default-background: #ebebeb;
-$default-foreground: #F7F7F7;
+$default-border-color: #383838;
+$default-border-highlight-color: #636363;
 
-$default-border-color: #d8d8d8;
-$default-shadow-color: #d8d8d8;
-
-$default-text-color: #696969;
+$default-text-color: #F5F5F5;
 $muted-text-color: #AAAAAA;
 
-$image-container-color: #dddddd;
+$image-container-color: #151515;
+
+/* Light-Theme */
+// $default-background: #ebebeb;
+// $default-foreground: #F7F7F7;
+// 
+// $default-border-color: #d8d8d8;
+// $default-shadow-color: #d8d8d8;
+// 
+// $default-text-color: #696969;
+// $muted-text-color: #AAAAAA;
+// 
+// $image-container-color: #dddddd;

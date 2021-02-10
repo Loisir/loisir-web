@@ -13,13 +13,13 @@ export default class Home extends React.Component {
           {/* <CreatePost /> */}
           <Modal
             children={
-              <span>Use it to describe your **credentials**, expertise ✨, and goals. What’s the best way to start? The following exercises can be helpful in figuring all of that out, and will help you determine what to include based on your target audience.</span>
+              <span>Use it to describe your **credentials**, expertise, and goals. What’s the best way to start? The following exercises can be helpful in figuring all of that out, and will help you determine what to include based on your target audience.</span>
             }
             isVisible={false}
           />
           <Profile
             username="philiptrembley"
-            aboutMe={'Use it to describe your **credentials**, expertise ✨, and goals. What’s the best way to start? The following exercises can be helpful in figuring all of that out, and will help you determine what to include based on your target audience.'}
+            aboutMe={'Use it to describe your **credentials**, expertise, and goals. What’s the best way to start? The following exercises can be helpful in figuring all of that out, and will help you determine what to include based on your target audience.'}
             location="Vancouver, Canada"
             credibility={56}
             followers={72362}

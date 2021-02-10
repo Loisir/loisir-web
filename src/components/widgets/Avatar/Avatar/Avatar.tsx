@@ -1,5 +1,7 @@
 import React from 'react';
-import { DEV_ENV } from '../../../../utils';
+import {
+  DEV_ENV
+} from '../../../../utils';
 import {
   IAvatarProps,
   IAvatarImageProps
@@ -48,8 +50,16 @@ export function useLoaded(
 
 const DefaultAvatar = (props: React.SVGProps<SVGSVGElement>) => {
   return (
-    <svg {...props}>
-      
+    <svg
+      viewBox="0 0 128 128"
+      width="100%"
+      height="100%"
+      {...props}
+    >
+      <path
+        fill="currentColor"
+        d=""
+      />
     </svg>
   );
 };
