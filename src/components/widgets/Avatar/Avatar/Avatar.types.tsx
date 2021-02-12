@@ -15,7 +15,7 @@ export interface IAvatarProps
 
   /**
    * Fallback icon to show in case image fails
-   * to load.
+   * to load
    */
   fallbackIcon?: React.ReactNode;
 

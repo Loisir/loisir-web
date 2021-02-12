@@ -10,7 +10,7 @@ import {
 } from 'react-router-dom';
 import './index.scss';
 
-import Navbar from './components/widgets/Navbar';
+import { Navbar } from './components/widgets/Navbar';
 
 /**
  * Add your components here.

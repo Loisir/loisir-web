@@ -14,7 +14,7 @@
   width: 100%;  
   text-align: center;
   background-color: $default-background;
-  // border-bottom: $default-border-color solid 1px;
+  border-bottom: $default-border-color solid 1px;
 }
 
 .navbar-container {
@@ -42,7 +42,6 @@
 }
 
 .tab-span {
-  font-size: 14px;
   color: $default-text-color;
 }
 
