@@ -10,6 +10,7 @@ export const NB = React.forwardRef<HTMLDivElement, INavbarProps>((props, ref) =>
   return (
     <header className="navbar"
       style={{ zIndex: NAV_BAR_ZINDEX }}
+      aria-orientation="vertical"
     >
       <div className="navbar-container">
         <span className="nav-tab">
@@ -44,9 +45,9 @@ export const Tab = forwardRef<HTMLDivElement, ITabProps>((props, ref) => {
   const {
     children
   } = props;
-  
+
   return (
-    <div>
+    <div ref={ref} {...props}>
       {children}
     </div>
   )
