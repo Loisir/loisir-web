@@ -48,7 +48,7 @@ export function useLoaded(
   return status;
 };
 
-const DefaultAvatar = (props: React.SVGProps<SVGSVGElement>) => {
+export const DefaultAvatar = (props: React.SVGProps<SVGSVGElement>) => {
   return (
     <svg
       viewBox="0 0 128 128"
