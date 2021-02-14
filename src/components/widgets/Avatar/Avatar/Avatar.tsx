@@ -4,7 +4,8 @@ import {
 } from '../../../../utils';
 import {
   IAvatarProps,
-  IAvatarImageProps
+  IAvatarImageProps,
+  DEFAULT_AVATAR_SIZE
 } from './Avatar.types';
 
 type Status = 'loading' | 'failed' | 'pending' | 'loaded';
@@ -68,28 +69,32 @@ export const Avatar = React.forwardRef<HTMLDivElement, IAvatarProps>((props, ref
   const {
     label,
     image,
-    fallbackIcon
+    fallbackIcon = <DefaultAvatar />,
+    ...rest
   } = props;
 
-  let children = null;
+  let content = null;
 
   const status = useLoaded(image);
   const hasImg = image;
   const hasImgNotFailing = hasImg && status !== 'failed';
 
   if (hasImgNotFailing) {
-    children = (
+    content = (
       <AvatarImage alt={label} src={image}/>
     );
   } else if (hasImg && label) {
-    children = label;
+    content = label;
   } else {
-    children = fallbackIcon || <DefaultAvatar />;
+    content = fallbackIcon;
   }
 
   return (
-    <div ref={ref} {...props} className={props.className}>
-      {children}
+    <div
+      ref={ref}
+      {...rest}
+    >
+      {content}
     </div>
   );
 });

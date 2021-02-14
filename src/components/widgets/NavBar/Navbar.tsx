@@ -43,11 +43,12 @@ export const NB = React.forwardRef<HTMLDivElement, INavbarProps>((props, ref) =>
 
 export const Tab = forwardRef<HTMLDivElement, ITabProps>((props, ref) => {
   const {
-    children
+    children,
+    ...rest
   } = props;
 
   return (
-    <div ref={ref} {...props}>
+    <div ref={ref} {...rest}>
       {children}
     </div>
   )
