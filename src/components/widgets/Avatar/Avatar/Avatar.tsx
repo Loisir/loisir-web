@@ -5,7 +5,6 @@ import {
 import {
   IAvatarProps,
   IAvatarImageProps,
-  DEFAULT_AVATAR_SIZE
 } from './Avatar.types';
 
 type Status = 'loading' | 'failed' | 'pending' | 'loaded';

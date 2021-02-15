@@ -3,37 +3,38 @@ import {
   IButtonProps
 } from "./Button.types";
 
-export const ButtonStartIcon = ((props, ref) => {
+const ButtonIcon = ((props: React.HTMLProps<HTMLSpanElement>) => {
+  const {
+    children,
+    ...rest
+  } = props;
+  
   return (
-    <span></span>
-  )
-});
-
-export const ButtonEndIcon = ((props, ref) => {
-  return (
-    <span></span>
-  )
+    <span {...rest}>
+      {children}
+    </span>
+  );
 });
 
 export const Button = React.forwardRef<HTMLButtonElement, IButtonProps>((props, ref) => {
   const {
-    content,
+    children,
     disabled = false,
-    endIcon: endIconProp,
-    startIcon: startIconProp,
+    leftIcon: leftIconProp,
+    rightIcon: rightIconProp,
     ...rest
   } = props;
 
-  const startIcon = startIconProp && (
-    <ButtonStartIcon>
-      {startIconProp}
-    </ButtonStartIcon>
+  const leftIcon = leftIconProp && (
+    <ButtonIcon>
+      {leftIconProp}
+    </ButtonIcon>
   );
 
-  const endIcon = endIconProp && (
-    <ButtonEndIcon>
-      {endIconProp}
-    </ButtonEndIcon>
+  const rightIcon = rightIconProp && (
+    <ButtonIcon>
+      {rightIconProp}
+    </ButtonIcon>
   );
 
   return (
@@ -42,9 +43,9 @@ export const Button = React.forwardRef<HTMLButtonElement, IButtonProps>((props, 
       ref={ref}
       {...rest}
     >
-      {startIcon}
-      {content}
-      {endIcon}
+      {leftIcon}
+      {children}
+      {rightIcon}
     </button>
-  )
+  );
 });

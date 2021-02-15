@@ -1,10 +1,4 @@
-export interface IButtonProps
-  extends React.HTMLAttributes<HTMLElement> {
-  /**
-   * Contents of the button
-   */
-  content: React.ReactNode;
-
+export interface IButtonProps {
   /**
    * If `true`, the component is disabled.
    * 
@@ -13,9 +7,9 @@ export interface IButtonProps
   disabled: boolean;
   
   /**
-   * Icon placed after the children.
+   * Icon placed before the children.
    */
-  endIcon: React.ReactNode;
+  leftIcon: React.ReactNode;
 
   /**
    * The URL to link to when the button is clicked.
@@ -24,7 +18,7 @@ export interface IButtonProps
   href: string;
 
   /**
-   * Icon placed before the children
+   * Icon placed after the children.
    */
-  startIcon: React.ReactNode;
+  rightIcon: React.ReactNode;
 };
