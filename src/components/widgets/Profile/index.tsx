@@ -4,6 +4,7 @@ import { labelNumber } from '../../../utils';
 import { Avatar } from '../Avatar';
 import gfm from 'remark-gfm';
 import ReactMarkdown from 'react-markdown';
+import { Button } from '../Button';
 
 interface IProfileProps {
   /**
@@ -95,9 +96,7 @@ export default class Profile extends React.Component<IProfileProps> {
             </div>
             
             <div className="follow-div">
-              <button onClick={this.onFollowClicked}>
-                Follow
-              </button>
+              <Button leftIcon="Hello" rightIcon="What">Follow</Button>
             </div>
           </div>
         </div>

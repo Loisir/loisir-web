@@ -3,7 +3,7 @@ import {
   IButtonProps
 } from "./Button.types";
 
-const ButtonIcon = ((props: React.HTMLProps<HTMLSpanElement>) => {
+const ButtonIcon = ((props: React.HTMLAttributes<HTMLElement>) => {
   const {
     children,
     ...rest
