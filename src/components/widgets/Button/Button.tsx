@@ -1,9 +1,7 @@
 import React from 'react';
-import {
-  IButtonProps
-} from "./Button.types";
+import { IButtonProps } from "./Button.types";
 
-const ButtonIcon = ((props: React.HTMLAttributes<HTMLElement>) => {
+const ButtonIcon = ((props: React.HTMLProps<HTMLSpanElement>) => {
   const {
     children,
     ...rest

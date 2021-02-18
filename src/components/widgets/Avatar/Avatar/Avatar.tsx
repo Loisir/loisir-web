@@ -1,38 +1,35 @@
 import React from 'react';
-import {
-  DEV_ENV
-} from '../../../../utils';
+import { DEV_ENV } from '../../../../utils';
 import {
   IAvatarProps,
   IAvatarImageProps,
 } from './Avatar.types';
 
+
 type Status = 'loading' | 'failed' | 'pending' | 'loaded';
 
-export function useLoaded(
-  image?: string
-) : Status {
+export function useLoaded(source?: string): Status {
   const [status, setStatus] = React.useState<Status>('pending');
 
   React.useEffect(() => {
-    if (!image) {
+    if (!source) {
       return undefined;
     }
     
     setStatus('loading');
 
     let active = true;
-    const img = new Image();
-    img.src = image;
+    const image = new Image();
+    image.src = source;
 
-    img.onload = () => {
+    image.onload = () => {
       if (!active) {
         return;
       }
       setStatus('loaded');
     }
 
-    img.onerror = () => {
+    image.onerror = () => {
       if (!active) {
         return;
       }
@@ -43,10 +40,11 @@ export function useLoaded(
       active = false;
     }
 
-  }, [image]);
+  }, [source]);
 
   return status;
 };
+
 
 export const DefaultAvatar = (props: React.SVGProps<SVGSVGElement>) => {
   return (
@@ -63,6 +61,7 @@ export const DefaultAvatar = (props: React.SVGProps<SVGSVGElement>) => {
     </svg>
   );
 };
+
 
 export const Avatar = React.forwardRef<HTMLDivElement, IAvatarProps>((props, ref) => {
   const {
@@ -101,6 +100,7 @@ export const Avatar = React.forwardRef<HTMLDivElement, IAvatarProps>((props, ref
 if (DEV_ENV) {
   Avatar.displayName = 'Avatar';
 }
+
 
 export const AvatarImage = ({
   src,
