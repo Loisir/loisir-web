@@ -1,6 +1,6 @@
 {
   "name": "loisir-web",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "author": "Loisir",
   "license": "BSD-3-Clause",
   "private": true,
@@ -22,8 +22,7 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.1",
     "remark-gfm": "^1.0.0",
-    "typescript": "^4.0.3",
-    "web-vitals": "^0.2.4"
+    "typescript": "^4.0.3"
   },
   "scripts": {
     "start": "react-scripts start",
